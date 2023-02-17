@@ -59,12 +59,36 @@ header .shop-cart {
   top: 30px;
   right: 0;
   width: 450px;
-  min-height: 100px;
   background: #fafafa;
   -webkit-box-shadow: 7px 6px 27px 0px rgba(34, 60, 80, 0.15);
   -moz-box-shadow: 7px 6px 27px 0px rgba(34, 60, 80, 0.15);
   box-shadow: 7px 6px 27px 0px rgba(34, 60, 80, 0.15);
   z-index: 1;
+
+  padding: 20px;
+  padding-bottom: 0px;
+}
+
+header .shop-cart .item {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+header .shop-cart .item img {
+  width: 70px;
+  float: left;
+  margin-right: 20px;
+}
+
+header .shop-cart .item h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+header .shop-cart .item b {
+  font-weight: 600;
+  color: #797979;
 }
 
 header .presentation {
