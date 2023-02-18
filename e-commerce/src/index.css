@@ -59,7 +59,7 @@ header .shop-cart {
   top: 30px;
   right: 0;
   width: 450px;
-  background: #fafafa;
+  background: #eaeaea;
   -webkit-box-shadow: 7px 6px 27px 0px rgba(34, 60, 80, 0.15);
   -moz-box-shadow: 7px 6px 27px 0px rgba(34, 60, 80, 0.15);
   box-shadow: 7px 6px 27px 0px rgba(34, 60, 80, 0.15);
@@ -67,6 +67,14 @@ header .shop-cart {
 
   padding: 20px;
   padding-bottom: 0px;
+}
+
+header .shop-cart .sum {
+  float: left;
+  width: 100%;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 header .shop-cart .item {
@@ -89,6 +97,12 @@ header .shop-cart .item h2 {
 header .shop-cart .item b {
   font-weight: 600;
   color: #797979;
+}
+
+header .shop-cart .empty {
+  font-weight: 600;
+  margin: 10px;
+  margin-top: 0px;
 }
 
 header .presentation {
@@ -163,7 +177,8 @@ main b {
   color: #5fa365;
 }
 
-main .add-to-cart {
+main .add-to-cart,
+header .shop-cart .delet-from-cart {
   position: absolute;
   right: 20px;
   bottom: 20px;
@@ -179,7 +194,13 @@ main .add-to-cart {
   font-weight: 600;
 }
 
-main .add-to-cart:hover {
+header .shop-cart .delet-from-cart {
+  position: relative;
+  float: right;
+}
+
+main .add-to-cart:hover,
+header .shop-cart .delet-from-cart:hover {
   transform: scale(1.5) translateY(-5px);
 }
 
