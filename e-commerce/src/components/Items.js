@@ -6,7 +6,12 @@ export class Items extends Component {
     return (
       <main>
         {this.props.items.map((el) => (
-          <Item key={el.id} item={el} onAdd={this.props.onAdd} />
+          <Item
+            onModule={this.props.onModule}
+            key={el.id}
+            item={el}
+            onAdd={this.props.onAdd}
+          />
         ))}
       </main>
     );

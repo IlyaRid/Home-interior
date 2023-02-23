@@ -173,28 +173,36 @@ main .item {
   padding-bottom: 20px;
 }
 
-main .item img {
+main .item img,
+.full-item img {
   width: 100%;
   height: 500px;
   transition: transform 500ms ease;
+  cursor: pointer;
 }
 
-main .item img:hover {
+main .item img:hover,
+.full-item img:hover {
   transform: scale(1.05);
 }
 
 main h2,
+.full-item h2,
 main p,
-main b {
+.full-item p,
+main b,
+.full-item b {
   margin: 10px 20px;
   color: #333;
 }
 
-main b {
+main b,
+.full-item b {
   color: #5fa365;
 }
 
 main .add-to-cart,
+.full-item .add-to-cart,
 header .shop-cart .delet-from-cart {
   position: absolute;
   right: 20px;
@@ -217,8 +225,29 @@ header .shop-cart .delet-from-cart {
 }
 
 main .add-to-cart:hover,
+.full-item .add-to-cart:hover,
 header .shop-cart .delet-from-cart:hover {
   transform: scale(1.5) translateY(-5px);
+}
+
+.full-item {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.799);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  overflow: auto;
+}
+
+.full-item > div {
+  position: relative;
+  width: 600px;
+  margin: 10% auto;
+  padding: 40px 30px;
+  background: #fff;
+  border-radius: 10px;
 }
 
 footer {

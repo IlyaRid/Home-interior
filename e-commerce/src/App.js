@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Items from "./components/Items";
 import Categories from "./components/Categories";
+import ModulWin from "./components/ModulWin";
 
 class App extends React.Component {
   constructor(props) {
@@ -36,12 +37,15 @@ class App extends React.Component {
           price: "150.99",
         },
       ],
+      moduleWin: false,
+      fullItem: {},
     };
 
     this.state.currentItems = this.state.items;
     this.addToOrder = this.addToOrder.bind(this);
     this.deletOrder = this.deletOrder.bind(this);
     this.chooseCategories = this.chooseCategories.bind(this);
+    this.onModule = this.onModule.bind(this);
   }
 
   render() {
@@ -49,10 +53,27 @@ class App extends React.Component {
       <div className="wrapper">
         <Header orders={this.state.orders} deletOrder={this.deletOrder} />
         <Categories chooseCategories={this.chooseCategories} />
-        <Items items={this.state.currentItems} onAdd={this.addToOrder} />
+        <Items
+          onModule={this.onModule}
+          items={this.state.currentItems}
+          onAdd={this.addToOrder}
+        />
+
+        {this.state.moduleWin && (
+          <ModulWin
+            onModule={this.onModule}
+            onAdd={this.addToOrder}
+            item={this.state.fullItem}
+          />
+        )}
         <Footer />
       </div>
     );
+  }
+
+  onModule(item) {
+    this.setState({ fullItem: item });
+    this.setState({ moduleWin: !this.state.moduleWin });
   }
 
   chooseCategories(category) {
