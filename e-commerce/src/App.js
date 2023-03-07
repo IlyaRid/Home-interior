@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      orders: [],
+      orders: JSON.parse(localStorage.getItem("orders")) || [],
       currentItems: [],
       items: [
         {
@@ -49,6 +49,8 @@ class App extends React.Component {
   }
 
   render() {
+    localStorage.setItem("orders", JSON.stringify(this.state.orders));
+
     return (
       <div className="wrapper">
         <Header orders={this.state.orders} deletOrder={this.deletOrder} />
