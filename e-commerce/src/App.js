@@ -47,6 +47,7 @@ class App extends React.Component {
     this.state.currentItems = this.state.items;
     this.addToOrder = this.addToOrder.bind(this);
     this.deletOrder = this.deletOrder.bind(this);
+    this.search = this.search.bind(this);
     this.chooseCategories = this.chooseCategories.bind(this);
     this.onModule = this.onModule.bind(this);
   }
@@ -80,6 +81,8 @@ class App extends React.Component {
     this.setState({ fullItem: item });
     this.setState({ moduleWin: !this.state.moduleWin });
   }
+
+  search(keyword) {}
 
   chooseCategories(category) {
     if (category === "All") {

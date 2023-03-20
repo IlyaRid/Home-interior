@@ -27,8 +27,14 @@ export default function Header(props) {
 
   return (
     <header>
-      <div>
+      <div className="head">
         <span className="logo">Home interior</span>
+        <input
+          className="search"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
         <ul className="nav">
           <li>О нас</li>
           <li>Контакты</li>
