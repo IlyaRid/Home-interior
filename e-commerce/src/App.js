@@ -19,6 +19,7 @@ class App extends React.Component {
           desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur ipsum modi, eius in magni hic.",
           category: "Chairs",
           price: "49.99",
+          quantity: 1,
         },
         {
           id: 2,
@@ -27,6 +28,7 @@ class App extends React.Component {
           desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius excepturi aperiam reiciendis itaque, numquam assumenda, non nihil voluptatem nobis, atque sint eveniet molestiae. Pariatur earum eveniet nesciunt eaque!",
           category: "Sofa",
           price: "200.99",
+          quantity: 1,
         },
         {
           id: 3,
@@ -35,6 +37,7 @@ class App extends React.Component {
           desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum, ad!",
           category: "Armchairs",
           price: "150.99",
+          quantity: 1,
         },
       ],
       moduleWin: false,
@@ -90,7 +93,19 @@ class App extends React.Component {
   }
 
   deletOrder(id) {
-    this.setState({ orders: this.state.orders.filter((el) => el.id !== id) });
+    let lastCopy = 0;
+    this.state.orders.forEach((el) => {
+      if (el.id === id) {
+        if (el.quantity > 1) {
+          el.quantity--;
+          lastCopy = el.quantity;
+        }
+      }
+    });
+    this.setState({ orders: this.state.orders });
+    console.log(lastCopy);
+    if (lastCopy === 0)
+      this.setState({ orders: this.state.orders.filter((el) => el.id !== id) });
   }
 
   addToOrder(item) {
@@ -98,8 +113,10 @@ class App extends React.Component {
     this.state.orders.forEach((el) => {
       if (el.id === item.id) {
         isInArray = true;
+        el.quantity++;
       }
     });
+    this.setState({ orders: this.state.orders });
     if (!isInArray) {
       this.setState({ orders: [...this.state.orders, item] });
     }

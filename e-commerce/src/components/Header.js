@@ -5,7 +5,7 @@ import Order from "./Order";
 const showOrders = (props) => {
   let sum = 0;
   props.orders.forEach((el) => {
-    sum += Number.parseFloat(el.price);
+    sum += Number.parseFloat(el.price * el.quantity);
   });
 
   return (
