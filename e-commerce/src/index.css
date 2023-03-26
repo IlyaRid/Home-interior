@@ -178,6 +178,17 @@ main {
   justify-content: space-between;
 }
 
+main .emptySearch {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 125px;
+  font-size: x-large;
+  font-weight: bold;
+  color: #797979;
+}
+
 main .item {
   width: 30%;
   margin-bottom: 50px;

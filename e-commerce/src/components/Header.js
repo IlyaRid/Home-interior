@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import Order from "./Order";
+import Search from "./Search";
 
 const showOrders = (props) => {
   let sum = 0;
@@ -19,7 +20,7 @@ const showOrders = (props) => {
 };
 
 const showNothing = () => {
-  return <div className="empty">Корзина пуста</div>;
+  return <div className="empty"> Корзина пуста </div>;
 };
 
 export default function Header(props) {
@@ -29,12 +30,7 @@ export default function Header(props) {
     <header>
       <div className="head">
         <span className="logo">Home interior</span>
-        <input
-          className="search"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
+        <Search search={props.search} />
         <ul className="nav">
           <li>О нас</li>
           <li>Контакты</li>
